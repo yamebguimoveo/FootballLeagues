@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/yamebguimoveo/FootballLeagues/issues"
   },
-  "homepage": "https://github.com/yamebguimoveo/FootballLeagues#readme"
+  "homepage": "https://github.com/yamebguimoveo/FootballLeagues#readme",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.26.1"
+  }
 }
