@@ -1,0 +1,27 @@
+#teams {
+    @include border();
+    margin-left: 3rem;
+    margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    img {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .team {
+        margin: 1rem;
+        border-radius: 15px;
+        color: $textColor;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+    }
+}

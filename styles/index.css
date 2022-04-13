@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+#mainHeader {
+  color: white;
+  font-size: 3rem;
+}
+
+body {
+  background-image: url("../pitchImage.jpeg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: "Alfa Slab One", Arial, Helvetica, sans-serif;
+}
+
+#teams {
+  border: 0.1rem black solid;
+  border-radius: 15px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 15px;
+  background-color: #23ad08;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#teams img {
+  height: 15rem;
+  width: 15rem;
+}
+
+#teams .team {
+  margin: 1rem;
+  border-radius: 15px;
+  color: white;
+}
+
+#teams .team:hover {
+  background-color: #197234;
+}
+
+#leagues button {
+  border: 0.1rem black solid;
+  border-radius: 15px;
+  background-color: #23ad08;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#leagues button:hover {
+  background-color: #197234;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=index.css.map */
