@@ -4,20 +4,10 @@ const teamsUrl:string ="https://www.thesportsdb.com/api/v1/json/2/search_all_tea
 const leaguesDiv = document.getElementById("leagues");
 const teamsDiv = document.getElementById("teams");
 
-type League = {
-    idLeague: string, strLeague: string, strSport: string, strLeagueAlternate: string
-}
-type team = {
-    strTeam:string, strTeamBadge:string
-}
-type Attribute = {
-    atriName:string , atriValue:string
-}
-
-//this function gets element type and atributes list and return DOM element 
-const createElementWithAtri= (elementName:string, atributesArray:Attribute[]) =>{
+//this function gets element type and attributes list and return DOM element 
+const createElementWithAtri= (elementName:string, attributesArray:Attribute[]) =>{
     const newElement = document.createElement(elementName);
-    atributesArray.forEach((atri:Attribute)=>{
+    attributesArray.forEach((atri:Attribute)=>{
         newElement.setAttribute(atri.atriName,atri.atriValue);
     })
     return newElement;
@@ -46,15 +36,15 @@ const showLeagues = (leaguesElem:HTMLElement, leagues:League[] ) =>{
 }
 
 //this function get league name and return the teams that exist in this team 
-const getTeamsFromLeague = async (leagueName:string):Promise<team[]> =>{
+const getTeamsFromLeague = async (leagueName:string):Promise<Team[]> =>{
     const response = await fetch(teamsUrl+leagueName);
     const data = await response.json();
-    console.log(data.teams);
-    return data.teams;
+    const teams:Team[]= data.teams;
+    return teams;
 } 
 
 //this function gets list of teams and show their data
-const showTeams = async (listOfTeams:team[])=>{
+const showTeams = async (listOfTeams:Team[])=>{
     listOfTeams.forEach((team:any)=>{
         const newTeamElement = createElementWithAtri("div",[{atriName:"id" , atriValue:team.strTeam},{atriName:"class" , atriValue:"team"}]);
         const logoElement = createElementWithAtri("img",[{atriName:"src" , atriValue:team.strTeamBadge}]);

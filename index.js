@@ -12,10 +12,10 @@ const leaguesUrl = "https://www.thesportsdb.com/api/v1/json/2/all_leagues.php";
 const teamsUrl = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=";
 const leaguesDiv = document.getElementById("leagues");
 const teamsDiv = document.getElementById("teams");
-//this function gets element type and atributes list and return DOM element 
-const createElementWithAtri = (elementName, atributesArray) => {
+//this function gets element type and attributes list and return DOM element 
+const createElementWithAtri = (elementName, attributesArray) => {
     const newElement = document.createElement(elementName);
-    atributesArray.forEach((atri) => {
+    attributesArray.forEach((atri) => {
         newElement.setAttribute(atri.atriName, atri.atriValue);
     });
     return newElement;
@@ -44,8 +44,8 @@ const showLeagues = (leaguesElem, leagues) => {
 const getTeamsFromLeague = (leagueName) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield fetch(teamsUrl + leagueName);
     const data = yield response.json();
-    console.log(data.teams);
-    return data.teams;
+    const teams = data.teams;
+    return teams;
 });
 //this function gets list of teams and show their data
 const showTeams = (listOfTeams) => __awaiter(void 0, void 0, void 0, function* () {

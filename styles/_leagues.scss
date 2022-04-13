@@ -1,1 +1,13 @@
- 
+#leagues {
+    button {
+        @include border();
+        background-color: $primaryColor;
+        color: $textColor;
+        font-size: 1.5rem;
+
+        &:hover {
+            background-color: $hoverColor;
+            border-radius: 15px;
+        }
+    }
+}
