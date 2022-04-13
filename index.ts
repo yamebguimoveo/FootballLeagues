@@ -61,9 +61,10 @@ const showTeams = async (listOfTeams:Team[])=>{
 const clickHandler = async (e:MouseEvent, leagueName:string) =>{
     e.preventDefault
     console.log(leagueName);
-    while (teamsDiv?.firstChild) {
-    teamsDiv.removeChild(teamsDiv.firstChild);
-  }
+    console.log(teamsDiv?.childNodes);
+    if(teamsDiv){
+        teamsDiv.innerHTML="";
+    }
     showTeams(await getTeamsFromLeague(leagueName));
 }
 

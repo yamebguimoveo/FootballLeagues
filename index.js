@@ -64,8 +64,9 @@ const showTeams = (listOfTeams) => __awaiter(void 0, void 0, void 0, function* (
 const clickHandler = (e, leagueName) => __awaiter(void 0, void 0, void 0, function* () {
     e.preventDefault;
     console.log(leagueName);
-    while (teamsDiv === null || teamsDiv === void 0 ? void 0 : teamsDiv.firstChild) {
-        teamsDiv.removeChild(teamsDiv.firstChild);
+    console.log(teamsDiv === null || teamsDiv === void 0 ? void 0 : teamsDiv.childNodes);
+    if (teamsDiv) {
+        teamsDiv.innerHTML = "";
     }
     showTeams(yield getTeamsFromLeague(leagueName));
 });
